@@ -1,165 +1,191 @@
-/* Vee — portfolio interactions (no dependencies) */
+/* Vee — portfolio interactions v2 (no dependencies) */
 (() => {
-  const body = document.body;
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
-  /* ---------- Word split for blur-in headline ---------- */
-  document.querySelectorAll("[data-split]").forEach((el) => {
+  /* ---------- Split helpers ---------- */
+  const splitWords = (el, cls, inner) => {
     let i = 0;
-    const wrap = (node) => {
+    const walk = (node) => {
       [...node.childNodes].forEach((child) => {
         if (child.nodeType === 3) {
-          const parts = child.textContent.split(/(\s+)/);
           const frag = document.createDocumentFragment();
-          parts.forEach((p) => {
-            if (!p) return;
-            if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(" ")); return; }
-            const s = document.createElement("span");
-            s.className = "word";
-            s.style.setProperty("--w", i++);
-            s.textContent = p;
-            frag.appendChild(s);
+          child.textContent.split(/(\s+)/).forEach((part) => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) return frag.appendChild(document.createTextNode(" "));
+            const w = document.createElement("span");
+            w.className = cls;
+            w.style.setProperty("--wi", i++);
+            if (inner) { const s = document.createElement("span"); s.textContent = part; w.appendChild(s); }
+            else w.textContent = part;
+            frag.appendChild(w);
           });
           child.replaceWith(frag);
-        } else if (child.nodeType === 1 && !child.classList.contains("spark")) {
-          wrap(child);
-        }
+        } else if (child.nodeType === 1) walk(child);
       });
     };
-    wrap(el);
-  });
-
-  /* ---------- Rolling button text (Viral) ---------- */
-  document.querySelectorAll(".btn").forEach((btn) => {
-    if (btn.querySelector(".roll")) return;
-    const label = btn.textContent.trim();
-    btn.setAttribute("aria-label", label);
-    btn.innerHTML = `<span class="roll" aria-hidden="true"><span>${label}</span><span>${label}</span></span>`;
-  });
-
-  /* ---------- Preloader ---------- */
-  const start = performance.now();
-  const ready = () => {
-    const wait = Math.max(0, (reduce ? 0 : 900) - (performance.now() - start));
-    setTimeout(() => {
-      body.classList.add("is-ready");
-      body.classList.remove("is-loading");
-      document.querySelectorAll(".hero [data-reveal]").forEach((el) => el.classList.add("is-in"));
-    }, wait);
+    walk(el);
+    return i;
   };
-  if (document.readyState === "complete") ready();
-  else window.addEventListener("load", ready, { once: true });
-  setTimeout(ready, 3500); // safety net for slow images
 
-  /* ---------- Scroll reveals, counters, bars ---------- */
+  // masked word reveal on headings
+  $$("[data-split]").forEach((el) => splitWords(el, "w", true));
+  // scroll-lit statement
+  const statement = document.querySelector("[data-highlight]");
+  if (statement) splitWords(statement, "hw", false);
+
+  /* ---------- Reveal on scroll ---------- */
   const animateCount = (el) => {
     const target = parseFloat(el.dataset.count);
-    const decimals = parseInt(el.dataset.decimals || "0", 10);
-    if (reduce) { el.textContent = target.toFixed(decimals); return; }
-    const dur = 1600;
-    const t0 = performance.now();
+    const dec = parseInt(el.dataset.decimals || "0", 10);
+    if (reduce) return (el.textContent = target.toFixed(dec));
+    const t0 = performance.now(), dur = 1700;
     const tick = (t) => {
       const p = Math.min(1, (t - t0) / dur);
-      const eased = 1 - Math.pow(1 - p, 4);
-      el.textContent = (target * eased).toFixed(decimals);
+      el.textContent = (target * (1 - Math.pow(1 - p, 4))).toFixed(dec);
       if (p < 1) requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
   };
 
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        el.classList.add("is-in");
-        el.querySelectorAll("[data-count]").forEach(animateCount);
-        el.querySelectorAll("[data-bar]").forEach((b) => b.style.setProperty("--w", b.dataset.bar + "%"));
-        io.unobserve(el);
-      });
-    },
-    { threshold: 0.18, rootMargin: "0px 0px -6% 0px" }
-  );
-  document.querySelectorAll("[data-reveal]:not(.hero [data-reveal]), .fan--cta, .head").forEach((el) => io.observe(el));
-
-  /* ---------- Hero fan: subtle mouse parallax ---------- */
-  const fan = document.querySelector(".hero .fan");
-  if (fan && !reduce && window.matchMedia("(pointer: fine)").matches) {
-    const cards = [...fan.querySelectorAll(".fan__card")];
-    let raf;
-    window.addEventListener("mousemove", (e) => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const x = e.clientX / window.innerWidth - 0.5;
-        const y = e.clientY / window.innerHeight - 0.5;
-        cards.forEach((c, i) => {
-          const depth = 1 - Math.abs(i - 2) * 0.3;
-          c.style.setProperty("--px", `${x * 18 * depth}px`);
-          c.style.setProperty("--py", `${y * 12 * depth}px`);
-        });
-      });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("in");
+      $$("[data-count]", e.target).forEach(animateCount);
+      if (e.target.matches("[data-count]")) animateCount(e.target);
+      io.unobserve(e.target);
     });
-  }
+  }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
 
-  /* ---------- Nav: scrolled state + active link ---------- */
+  $$("[data-fade], [data-split], .band__grid, .portrait__card").forEach((el) => io.observe(el));
+
+  // hero: trigger immediately after fonts settle
+  const heroIn = () => $$(".hero [data-fade], .hero [data-split]").forEach((el) => el.classList.add("in"));
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(() => requestAnimationFrame(heroIn));
+  setTimeout(heroIn, 1200);
+
+  /* ---------- Scroll-driven effects ---------- */
   const nav = document.querySelector(".nav");
-  const onScroll = () => nav.classList.toggle("is-scrolled", window.scrollY > 20);
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  const portraitImg = document.querySelector(".portrait img");
+  const hw = statement ? $$(".hw", statement) : [];
+  const projs = $$(".proj");
+  const timeline = document.querySelector(".timeline");
+  const fill = document.querySelector(".timeline__fill");
+  const steps = $$(".tstep");
+  const desktop = () => window.innerWidth > 860;
+  let lastY = window.scrollY;
 
-  const links = [...document.querySelectorAll(".nav__pill a")];
-  const sections = links.map((a) => document.querySelector(a.getAttribute("href"))).filter(Boolean);
-  const spy = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        links.forEach((a) => a.classList.toggle("is-active", a.getAttribute("href") === "#" + e.target.id));
+  const onScroll = () => {
+    const y = window.scrollY, vh = window.innerHeight;
+
+    // nav: glass after scroll, hide on scroll down
+    nav.classList.toggle("is-scrolled", y > 20);
+    const sheetOpen = document.querySelector(".sheet.is-open");
+    nav.classList.toggle("is-hidden", !sheetOpen && y > 400 && y > lastY + 4);
+    if (y < lastY - 4 || y < 400) nav.classList.remove("is-hidden");
+    lastY = y;
+
+    if (reduce) return;
+
+    // portrait parallax
+    if (portraitImg) portraitImg.style.setProperty("--p", `${Math.min(y, 700) * -0.08}px`);
+
+    // statement highlight
+    if (statement) {
+      const r = statement.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (r.height + vh * 0.35)));
+      const lit = Math.floor(p * hw.length);
+      hw.forEach((w, i) => w.classList.toggle("on", i < lit));
+    }
+
+    // stacked project cards: scale down cards that are being covered
+    if (desktop()) {
+      projs.forEach((card, i) => {
+        const next = projs[i + 1];
+        if (!next) return;
+        const nr = next.getBoundingClientRect();
+        const cr = card.getBoundingClientRect();
+        const overlap = Math.min(1, Math.max(0, (cr.bottom - nr.top) / cr.height));
+        const depth = projs.length - 1 - i;
+        card.style.setProperty("--s", (1 - overlap * 0.05 * Math.min(depth, 2)).toFixed(4));
+        card.style.setProperty("--b", (1 - overlap * 0.08).toFixed(4));
       });
-    },
-    { rootMargin: "-45% 0px -50% 0px" }
-  );
-  sections.forEach((s) => spy.observe(s));
+    }
 
-  /* ---------- Mobile menu ---------- */
-  const burger = document.querySelector(".nav__burger");
-  const menu = document.querySelector(".mobile-menu");
-  const setMenu = (open) => {
-    burger.setAttribute("aria-expanded", String(open));
-    menu.classList.toggle("is-open", open);
-    menu.setAttribute("aria-hidden", String(!open));
-    body.style.overflow = open ? "hidden" : "";
+    // timeline fill
+    if (timeline && fill) {
+      const r = timeline.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (vh * 0.75 - r.top) / (r.height * 0.9)));
+      timeline.style.setProperty("--prog", p.toFixed(3));
+      steps.forEach((s, i) => s.classList.toggle("is-lit", p >= (i + 0.15) / steps.length));
+    }
   };
-  burger.addEventListener("click", () => setMenu(burger.getAttribute("aria-expanded") !== "true"));
-  menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
 
-  /* ---------- FAQ: one open at a time, smooth height ---------- */
-  const qas = [...document.querySelectorAll(".qa")];
-  qas.forEach((qa) => {
-    const summary = qa.querySelector("summary");
-    const answer = qa.querySelector(".qa__a");
-    summary.addEventListener("click", (e) => {
-      e.preventDefault();
-      const opening = !qa.open;
-      qas.forEach((other) => {
-        if (other !== qa && other.open) close(other);
-      });
-      opening ? open(qa) : close(qa);
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { onScroll(); ticking = false; });
+  }, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
+  if (reduce) { hw.forEach((w) => w.classList.add("on")); steps.forEach((s) => s.classList.add("is-lit")); }
+
+  /* ---------- Button glow follows cursor ---------- */
+  $$(".btn--dark, .btn--light").forEach((b) => {
+    b.addEventListener("pointermove", (e) => {
+      const r = b.getBoundingClientRect();
+      b.style.setProperty("--mx", `${e.clientX - r.left}px`);
+      b.style.setProperty("--my", `${e.clientY - r.top}px`);
     });
-    function open(d) {
-      d.open = true;
-      if (reduce) return;
-      const a = d.querySelector(".qa__a");
-      a.animate([{ height: "0px", opacity: 0 }, { height: a.scrollHeight + "px", opacity: 1 }], { duration: 450, easing: "cubic-bezier(0.22,1,0.36,1)" });
-    }
-    function close(d) {
-      const a = d.querySelector(".qa__a");
-      if (reduce) { d.open = false; return; }
-      const anim = a.animate([{ height: a.scrollHeight + "px", opacity: 1 }, { height: "0px", opacity: 0 }], { duration: 350, easing: "cubic-bezier(0.22,1,0.36,1)" });
-      anim.onfinish = () => (d.open = false);
-    }
-    answer.style.overflow = "hidden";
   });
 
+  /* ---------- Active nav link ---------- */
+  const links = $$(".nav__links a");
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) links.forEach((a) => a.classList.toggle("is-active", a.getAttribute("href") === "#" + e.target.id));
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  links.forEach((a) => { const s = document.querySelector(a.getAttribute("href")); if (s) spy.observe(s); });
+
+  /* ---------- Mobile sheet ---------- */
+  const burger = document.querySelector(".nav__burger");
+  const sheet = document.querySelector(".sheet");
+  const setSheet = (open) => {
+    burger.setAttribute("aria-expanded", String(open));
+    sheet.classList.toggle("is-open", open);
+    sheet.setAttribute("aria-hidden", String(!open));
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+  burger.addEventListener("click", () => setSheet(burger.getAttribute("aria-expanded") !== "true"));
+  $$("a", sheet).forEach((a) => a.addEventListener("click", () => setSheet(false)));
+
+  /* ---------- FAQ accordion with height animation ---------- */
+  const qas = $$(".qa");
+  const openQa = (d) => {
+    d.open = true;
+    if (reduce) return;
+    const a = d.querySelector(".qa__a");
+    a.animate([{ height: "0px", opacity: 0 }, { height: a.scrollHeight + "px", opacity: 1 }], { duration: 500, easing: "cubic-bezier(.22,1,.36,1)" });
+  };
+  const closeQa = (d) => {
+    if (reduce) return (d.open = false);
+    const a = d.querySelector(".qa__a");
+    a.animate([{ height: a.scrollHeight + "px", opacity: 1 }, { height: "0px", opacity: 0 }], { duration: 380, easing: "cubic-bezier(.22,1,.36,1)" }).onfinish = () => (d.open = false);
+  };
+  qas.forEach((d) => d.querySelector("summary").addEventListener("click", (e) => {
+    e.preventDefault();
+    const willOpen = !d.open;
+    qas.forEach((o) => o !== d && o.open && closeQa(o));
+    willOpen ? openQa(d) : closeQa(d);
+  }));
+
+  /* ---------- Ticker: duplicate track for seamless loop ---------- */
+  const track = document.querySelector(".ticker__track");
+  if (track) track.innerHTML += track.innerHTML;
+
   /* ---------- Year ---------- */
-  document.querySelectorAll("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
+  $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 })();
