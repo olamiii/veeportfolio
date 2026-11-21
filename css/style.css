@@ -407,10 +407,6 @@ a.svc:hover footer i { background: var(--ink); color: #fff; transform: rotate(-4
   -webkit-background-clip: text; background-clip: text; color: transparent;
   transition: background-position 1s var(--ease);
 }
-.footer__big span { font-size: .5em; color: var(--ink); -webkit-text-fill-color: var(--ink); transition: transform .8s var(--ease); }
-.footer__big:hover span { transform: rotate(45deg); }
-.footer__big:hover { background-position: 0 0; }
-.footer__big:hover span { color: var(--accent-2); -webkit-text-fill-color: var(--accent-2); }
 .footer__meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding: 22px 0; border-top: 1px solid var(--line-2); font-size: 13px; color: var(--muted); }
 .footer__meta nav { display: flex; gap: 22px; }
 .footer__meta a:hover { color: var(--ink); }
@@ -662,3 +658,52 @@ a.svc:hover footer i { background: var(--ink); color: #fff; transform: rotate(-4
 /* logos inside work cards are not full-bleed photos */
 .proj__media .lockup__tile img { position: static; inset: auto; width: 100%; height: 100%; object-fit: contain; }
 .proj:hover .proj__media .lockup__tile img { transform: none; }
+
+/* ---------- Reels in partnership cards (portrait clips) ---------- */
+.ph--reel::before { display: none; }
+.ph--reel { padding: 20px; }
+.reel { position: relative; z-index: 1; display: block; height: min(100%, 430px); aspect-ratio: 203 / 360; border-radius: 22px; overflow: hidden; border: 4px solid rgba(255,255,255,.9); box-shadow: 0 30px 50px -24px rgba(20,20,19,.5); transform: rotate(-2deg); transition: transform .8s var(--ease); }
+.proj__media .reel img { position: static; inset: auto; width: 100%; height: 100%; object-fit: cover; }
+.proj:hover .proj__media .reel img { transform: none; }
+.proj:hover .reel { transform: rotate(0deg) scale(1.03); }
+.ph--reel { align-content: center; }
+.proj__media.ph--reel { min-height: 420px; }
+.reel img { width: 100%; height: 100%; object-fit: cover; }
+.reel--lg { height: 88%; }
+.cs-media.ph--reel { aspect-ratio: 16 / 9; }
+
+/* ---------- Brand work grid: three cards + wide Citadel card ---------- */
+.wgrid { grid-template-columns: repeat(3, 1fr); }
+.wcard--wide { grid-column: 1 / -1; display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; }
+.wcard--wide .wcard__media { margin: 0; }
+.wcard--wide .wcard__media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; margin: 0; }
+.wcard__body { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.wcard--award .wcard__tags { margin-top: 8px; }
+
+/* ---------- Footer: arrow outside the clipped text (fixes double arrow) ---------- */
+.footer__big { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: var(--ink); }
+.footer__big-text {
+  background: linear-gradient(90deg, var(--accent-2) 50%, var(--ink) 50%) 100% 0 / 200% 100% no-repeat;
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+  transition: background-position 1s var(--ease);
+}
+.footer__big:hover .footer__big-text { background-position: 0 0; }
+.footer__big .footer__arrow { font-size: .5em; color: var(--ink); -webkit-text-fill-color: currentColor; background: none; transition: transform .8s var(--ease), color .4s; }
+.footer__big:hover .footer__arrow { transform: rotate(45deg); color: var(--accent-2); }
+
+/* ---------- Footer wordmark: show the full name ---------- */
+.footer__word { height: auto; overflow: visible; line-height: 1; padding: 0 var(--g) .12em; font-size: clamp(72px, 17.5vw, 280px); white-space: nowrap; }
+
+@media (max-width: 1080px) {
+  .wgrid { grid-template-columns: 1fr 1fr; }
+  .wcard--award { grid-column: 1 / -1; }
+}
+@media (max-width: 860px) {
+  .wgrid { grid-template-columns: 1fr; }
+  .wcard--wide { grid-template-columns: 1fr; }
+  .proj__media.ph--reel { min-height: 360px; }
+  .reel { height: 320px; }
+}
+
+.reel--lg { height: clamp(300px, 38vw, 560px); }
+@media (max-width: 860px) { .reel--lg { height: 300px; } }
