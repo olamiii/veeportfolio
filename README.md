@@ -31,11 +31,21 @@ js/main.js     word reveals, scroll highlight, stacked cards, timeline, counters
 
 No build step. Open `index.html` in a browser, or deploy the folder to Vercel, Netlify or GitHub Pages.
 
-## Making it yours
+## Content
 
-- **Name / logo:** search for `Vee` in `index.html`.
-- **Colours & fonts:** edit the `:root` tokens at the top of `css/style.css`.
-- **Case studies, stats, testimonial, FAQ:** all copy lives in `index.html`. Client names and numbers are placeholders.
-- **Images:** currently Unsplash placeholders; swap the `src` URLs for real project shots and a real portrait.
-- **Contact:** replace `hello@vee.studio` and the `#` social links.
-- Animation respects `prefers-reduced-motion`.
+Portfolio of **Oluwatoni Victoria Ogundipe**, Brand, Communications & Partnerships Strategist (Events & Partnerships Manager at Pulse). Content is curated from the former portfolio (tonisportfolio.netlify.app) plus the 2026 partnerships.
+
+```
+index.html                     home: positioning, partnerships, results, capabilities,
+                               Pulse Fiesta + brand work, partnership methodology,
+                               testimonials, about, published work, contact
+partnerships/*.html            case studies: ART X Lagos, The Juice x Lagos Cocktail Week,
+                               Moonshot by TechCabal, The House x Lagos Fashion Week
+assets/img/                    real images from the former portfolio
+```
+
+## Replacing placeholders
+
+Partnership hero images and the About photo are typographic placeholders (`.ph` figures).
+To use a real photo, replace the `<figure class="... ph ph--...">` contents with an `<img>`
+and remove the `ph` classes, or drop images into `assets/img/` and reference them.
