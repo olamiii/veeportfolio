@@ -718,3 +718,12 @@ a.svc:hover footer i { background: var(--ink); color: #fff; transform: rotate(-4
 /* keep blurred glow inside the rounded CTA card */
 .cta__card { clip-path: inset(0 round 40px); }
 @media (max-width: 600px) { .cta__card { clip-path: inset(0 round 28px); } }
+
+/* Clickable reels -> Instagram */
+.reel--link { cursor: pointer; }
+.reel__play { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); white-space: nowrap; padding: 7px 12px; border-radius: 999px; background: rgba(20,20,19,.78); color: #fff; font-size: 12px; font-weight: 500; backdrop-filter: blur(8px); transition: background .3s, transform .5s var(--ease); }
+.reel--link::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background .4s; }
+.reel--link:hover::after { background: rgba(0,0,0,.12); }
+.reel--link:hover .reel__play { background: var(--accent-2); transform: translateX(-50%) translateY(-2px); }
+.reel--link:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.reel__play { z-index: 2; }
