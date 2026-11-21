@@ -42,11 +42,11 @@ index.html                     home: positioning, partnerships, capabilities,
 partnerships/*.html            case studies: ART X Lagos, The Juice x Lagos Cocktail Week,
                                Moonshot by TechCabal, The House x Lagos Fashion Week
 assets/img/                    real images from the former portfolio
-assets/logos/                  partner logos used in the partnership lockups
+assets/reels/                  partnership clips (replace the .webp stills with .gif files to animate)
 ```
 
 ## Replacing placeholders
 
-Partnership cards show partner × Pulse logo lockups. The About photo is a typographic placeholder (`.ph` figures).
+Partnership cards show project clips from assets/reels/. Earlier placeholders use the `.ph` class (`.ph` figures).
 To use a real photo, replace the `<figure class="... ph ph--...">` contents with an `<img>`
 and remove the `ph` classes, or drop images into `assets/img/` and reference them.

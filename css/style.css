@@ -707,3 +707,14 @@ a.svc:hover footer i { background: var(--ink); color: #fff; transform: rotate(-4
 
 .reel--lg { height: clamp(300px, 38vw, 560px); }
 @media (max-width: 860px) { .reel--lg { height: 300px; } }
+
+/* Footer ends on "Let's talk" */
+.footer { padding-bottom: clamp(32px, 5vw, 56px); }
+.footer__big { padding-bottom: 0; }
+
+/* Testimonials: one font, one size */
+.qcard p, .qcard--big p { font-family: var(--sans); font-size: clamp(17px, 1.45vw, 19px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.55; }
+
+/* keep blurred glow inside the rounded CTA card */
+.cta__card { clip-path: inset(0 round 40px); }
+@media (max-width: 600px) { .cta__card { clip-path: inset(0 round 28px); } }
