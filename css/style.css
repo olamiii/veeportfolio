@@ -634,3 +634,31 @@ a.svc:hover footer i { background: var(--ink); color: #fff; transform: rotate(-4
   .ph__note { font-size: 10px; bottom: 22px; padding: 5px 10px; }
   .cs-media .ph__lockup { font-size: 34px; }
 }
+
+/* Partner logo lockups (replace photo placeholders) */
+.ph--logos::before { display: none; }
+.lockup { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: clamp(12px, 2vw, 24px); width: 100%; }
+.lockup__tile { display: grid; place-items: center; flex: 0 1 42%; aspect-ratio: 1.35; padding: clamp(14px, 2vw, 26px); border-radius: 20px; background: #fff; box-shadow: 0 1px 0 rgba(255,255,255,.8) inset, 0 18px 36px -18px rgba(20,20,19,.35); transition: transform .8s var(--ease); }
+.lockup__tile--dark { background: #000; }
+.lockup__tile img { width: 100%; height: 100%; object-fit: contain; }
+.lockup i { font-family: var(--serif); font-style: normal; font-size: clamp(32px, 3.4vw, 52px); line-height: 1; color: rgba(20,20,19,.55); }
+.proj:hover .lockup__tile:first-child { transform: rotate(-3deg) translateY(-4px); }
+.proj:hover .lockup__tile:last-child { transform: rotate(3deg) translateY(-4px); }
+.lockup--lg .lockup__tile { flex-basis: 34%; border-radius: 26px; }
+
+/* About: three tiles */
+.tiles--3 { grid-template-columns: repeat(3, 1fr); }
+
+/* Linked project title */
+.wcard__link { transition: color .3s; }
+.wcard__link span { display: inline-block; font-size: .7em; transition: transform .5s var(--ease); }
+.wcard__link:hover { color: var(--accent-2); }
+.wcard__link:hover span { transform: translate(3px, -3px); }
+
+@media (max-width: 600px) {
+  .tiles--3 { grid-template-columns: 1fr; }
+  .lockup__tile { border-radius: 14px; padding: 12px; }
+}
+/* logos inside work cards are not full-bleed photos */
+.proj__media .lockup__tile img { position: static; inset: auto; width: 100%; height: 100%; object-fit: contain; }
+.proj:hover .proj__media .lockup__tile img { transform: none; }

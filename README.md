@@ -36,16 +36,17 @@ No build step. Open `index.html` in a browser, or deploy the folder to Vercel, N
 Portfolio of **Oluwatoni Victoria Ogundipe**, Brand, Communications & Partnerships Strategist (Events & Partnerships Manager at Pulse). Content is curated from the former portfolio (tonisportfolio.netlify.app) plus the 2026 partnerships.
 
 ```
-index.html                     home: positioning, partnerships, results, capabilities,
-                               Pulse Fiesta + brand work, partnership methodology,
-                               testimonials, about, published work, contact
+index.html                     home: positioning, partnerships, capabilities,
+                               Pulse Fiesta + brand work, testimonials, about,
+                               published work, contact
 partnerships/*.html            case studies: ART X Lagos, The Juice x Lagos Cocktail Week,
                                Moonshot by TechCabal, The House x Lagos Fashion Week
 assets/img/                    real images from the former portfolio
+assets/logos/                  partner logos used in the partnership lockups
 ```
 
 ## Replacing placeholders
 
-Partnership hero images and the About photo are typographic placeholders (`.ph` figures).
+Partnership cards show partner × Pulse logo lockups. The About photo is a typographic placeholder (`.ph` figures).
 To use a real photo, replace the `<figure class="... ph ph--...">` contents with an `<img>`
 and remove the `ph` classes, or drop images into `assets/img/` and reference them.
