@@ -36,6 +36,7 @@ No build step. Open `index.html` in a browser, or deploy the folder to Vercel, N
 Portfolio of **Oluwatoni Victoria Ogundipe**, Brand, Communications & Partnerships Strategist (Events & Partnerships Manager at Pulse). Content is curated from the former portfolio (tonisportfolio.netlify.app) plus the 2026 partnerships.
 
 ```
+brand-work.html                more brand & communications work
 index.html                     home: positioning, partnerships, capabilities,
                                Pulse Fiesta + brand work, testimonials, about,
                                published work, contact

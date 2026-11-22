@@ -747,13 +747,7 @@ a.svc:hover footer i { background: var(--ink); color: #fff; transform: rotate(-4
 @keyframes brands { to { transform: translateX(-50%); } }
 @media (max-width: 600px) { .brand { height: 68px; } .brand--fill { width: 68px; } .brand--white img { max-height: 50px; } }
 
-/* ---------- Partnerships: animated sticky stack, one neutral card colour ---------- */
-.stack .proj {
-  background: var(--card);
-  box-shadow: inset 0 0 0 1px var(--line), 0 -1px 0 rgba(255,255,255,.6), 0 24px 48px -28px rgba(20,20,19,.35);
-}
-.stack .proj__media.ph { background: none; box-shadow: none; min-height: 0; padding: 0; }
-.stack .proj__media::after { display: none; }
+/* ---------- Partnerships: animated sticky stack in pastels ---------- */
 .stack .proj__copy { justify-content: center; }
 .stack .proj__copy .chip { background: var(--card); box-shadow: inset 0 0 0 1px var(--line); }
 .stack .reel { height: clamp(360px, 34vw, 460px); }
@@ -774,3 +768,12 @@ a.svc:hover footer i { background: var(--ink); color: #fff; transform: rotate(-4
 @media (max-width: 860px) { .wgrid { grid-template-columns: 1fr; } .highlights { grid-template-columns: 1fr; } }
 
 @media (max-width: 860px) { .logos .brands { width: 100%; } }
+
+/* Pastel stack: keep reel panel clean */
+.stack .proj__media.ph--reel { box-shadow: inset 0 0 0 1px rgba(255,255,255,.35); }
+
+/* Home: link to the brand work page */
+.more-link { display: flex; justify-content: center; margin-top: clamp(40px, 5vw, 64px); }
+
+/* Brand work page */
+.brand-work-page { padding-top: clamp(16px, 3vw, 32px); }
