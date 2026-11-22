@@ -157,6 +157,7 @@
     burger.setAttribute("aria-expanded", String(open));
     sheet.classList.toggle("is-open", open);
     sheet.setAttribute("aria-hidden", String(!open));
+    sheet.inert = !open; // closed menu stays out of the keyboard tab order
     document.body.style.overflow = open ? "hidden" : "";
   };
   burger.addEventListener("click", () => setSheet(burger.getAttribute("aria-expanded") !== "true"));
