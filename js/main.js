@@ -195,6 +195,26 @@
     brandsTrack.appendChild(copy);
   }
 
+  /* ---------- Light / dark mode ---------- */
+  const root = document.documentElement;
+  const toggles = $$(".theme-toggle");
+  const label = () => toggles.forEach((b) => b.setAttribute("aria-label", root.dataset.theme === "dark" ? "Switch to light mode" : "Switch to dark mode"));
+  label();
+  toggles.forEach((b) => b.addEventListener("click", () => {
+    const next = root.dataset.theme === "dark" ? "light" : "dark";
+    root.dataset.theme = next;
+    try { localStorage.setItem("theme", next); } catch (e) {}
+    label();
+  }));
+  // follow the system setting until the visitor picks a theme
+  if (window.matchMedia) {
+    matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+      let saved = null;
+      try { saved = localStorage.getItem("theme"); } catch (err) {}
+      if (!saved) { root.dataset.theme = e.matches ? "dark" : "light"; label(); }
+    });
+  }
+
   /* ---------- Year ---------- */
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 })();
