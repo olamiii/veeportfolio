@@ -252,3 +252,52 @@
   /* ---------- Year ---------- */
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 })();
+
+/* ---------- Brand page: interactive social tiles (parallax, drag, tap) ---------- */
+(() => {
+  const tiles = [...document.querySelectorAll(".js-tile")];
+  if (!tiles.length) return;
+  const hero = tiles[0].closest(".bw-hero");
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const depth = [26, -18, -24, 16];
+  let dragging = null;
+  if (!still && hero) {
+    hero.addEventListener("pointermove", (e) => {
+      if (dragging || e.pointerType !== "mouse") return;
+      const r = hero.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      tiles.forEach((t, i) => {
+        if (t.dataset.dx) return;
+        t.style.setProperty("--tx", `${x * depth[i]}px`);
+        t.style.setProperty("--ty", `${y * depth[i]}px`);
+      });
+    });
+    hero.addEventListener("pointerleave", () => tiles.forEach((t) => { if (!t.dataset.dx) { t.style.setProperty("--tx", "0px"); t.style.setProperty("--ty", "0px"); } }));
+  }
+  tiles.forEach((t) => {
+    let sx, sy, moved;
+    t.addEventListener("pointerdown", (e) => {
+      if (getComputedStyle(t).position !== "absolute") return;
+      dragging = t; moved = false; sx = e.clientX; sy = e.clientY;
+      t.setPointerCapture(e.pointerId); t.classList.add("is-drag");
+    });
+    t.addEventListener("pointermove", (e) => {
+      if (dragging !== t) return;
+      const dx = e.clientX - sx, dy = e.clientY - sy;
+      if (Math.abs(dx) + Math.abs(dy) > 4) moved = true;
+      t.style.setProperty("--tx", `${dx}px`); t.style.setProperty("--ty", `${dy}px`);
+    });
+    const end = () => {
+      if (dragging !== t) return;
+      dragging = null; t.classList.remove("is-drag");
+      t.style.setProperty("--tx", "0px"); t.style.setProperty("--ty", "0px");
+    };
+    t.addEventListener("pointerup", end); t.addEventListener("pointercancel", end);
+    t.addEventListener("click", () => {
+      if (moved || still) return;
+      t.classList.remove("is-pop"); void t.offsetWidth; t.classList.add("is-pop");
+    });
+    t.addEventListener("animationend", (e) => { if (e.animationName === "bwPop") t.classList.remove("is-pop"); });
+  });
+})();
