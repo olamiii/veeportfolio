@@ -1,149 +1,140 @@
 # Homepage review: Oluwatoni Victoria
 
-Reviewed 22 November 2026 | Input: local repo `/home/user/veeportfolio` (commit `bebbc42`, the same build deployed to veeportfolio-navy.vercel.app), rendered in a headless browser | Audience: assumed hiring managers and recruiters for brand, communications and partnerships roles at media, agency and consumer-brand companies, plus potential partners | Target role and level: not specified, level fit unknown
+Reviewed 22 November 2026 (second review; the first scored 71.0) | Input: local repo `/home/user/veeportfolio` at the deployed commit, rendered in a headless browser | Audience: assumed hiring managers and recruiters for brand, communications and partnerships roles at media, agency and consumer-brand companies, plus potential partners | Target role and level: not specified, level fit unknown
 
 ## A. Overall read
 
-Within the first viewport a reviewer knows this is a brand, communications and partnerships strategist currently at Pulse, and the four partnership cards that follow are the strongest part of the page: each names the partners, a role line and a way into a case study, and The Juice card carries a clearly qualified metric. The main obstacles are attribution and focus. The WAN-IFRA proof line sits next to the name as if it were a personal award, the Moonshot card does not say what Oluwatoni owned, and three consecutive sections (approach cards, Key Strengths, Capabilities) describe what she does before the Pulse Fiesta campaign shows it. There is also no LinkedIn or CV route, which a recruiter will look for.
+The homepage now does its routing job well. Within the first viewport a reviewer knows the role, the employer and a credible team award, and the four partnership cards that follow each state a personal role plus a result or focus, with Pulse Fiesta directly after as the brand proof. Every fix from the first review landed: the award is attributed to the team with a stated role, keyboard focus no longer enters the hidden menu, LinkedIn is available, and the three overlapping sections are one. What remains is smaller: Moonshot is the only card without an outcome, a few lines repeat, and the "Recent work" ticker is read twice by screen readers.
 
 ## B. Evidence and limitations
 
-- **Reviewed:** `index.html`, full page, light mode; dark mode spot-checked in an earlier session pass. Screenshots in `screenshots/`: `home-desktop-1440x900-initial.png`, `home-desktop-1440-full.png`, `home-mobile-390x844-initial.png`, `home-mobile-390-full.png`, `home-focus-sample.png`.
+- **Reviewed:** `index.html`, full page, light mode. Screenshots in `screenshots/`: `home-desktop-1440x900-initial.png`, `home-desktop-1440-full.png`, `home-mobile-390x844-initial.png`, `home-mobile-390-full.png`, `home-focus-sample.png` (all refreshed for this review).
 - **Viewports:** 1440 x 900 desktop, 390 x 844 mobile (touch emulation).
-- **Tested:** nav "Brand work" opens `brand-work.html`; all four "View case study" buttons open the matching page in `partnerships/`; "Explore the brand portfolio" opens `brand-work.html`; reel links point to Instagram (destination not loaded, Instagram is unreachable from the review environment); a 14-step keyboard Tab pass from the top; reduced motion emulated (entrance animations and the logo marquee stop); horizontal overflow at 390 px (none).
-- **Not tested:** the live Vercel URL itself (blocked from the review environment, the local build is the same commit); Gmail compose destination; screen-reader output; load speed and contrast (not measured, no tool run).
-- **Assumptions:** the visitor is hiring for or partnering with a brand and partnerships professional in the Nigerian and wider African media and consumer market. No target level was given.
+- **Tested:** nav "Brand work" opens `brand-work.html`; all four "View case study" buttons open the matching pages in `partnerships/`; "Explore the brand portfolio" opens `brand-work.html`; a 14-step keyboard Tab pass from the top (focus goes from "Let's talk" straight to the hero buttons); reduced motion emulated (entrance animations and the logo marquee stop); no horizontal overflow at 390 px; image alternatives counted (34 images: 0 missing alt, 13 empty alt, all on the duplicated marquee copy, the rest descriptive).
+- **Not tested:** the live Vercel URL itself (unreachable from the review environment; the local build is the deployed commit); Instagram, LinkedIn and Gmail destinations; screen-reader output; load speed and contrast (not measured).
+- **Assumptions:** visitors are hiring for, or partnering with, a brand and partnerships professional in the Nigerian and wider African media and consumer market.
 - The 10 and 60 second passes below are review exercises, not measurements of real recruiter behavior.
 
 ## C. First impression and skim
 
 **Pass A, first impression (initial viewport, 1440 x 900):**
-- What kind of professional: the eyebrow "Brand, Communications & Partnerships Strategist" and the line "Events & Partnerships Manager at Pulse" make the role clear. The headline "I build brands and experiences that connect." is warm but generic on its own; the supporting line does the work.
-- What looks central: the portrait, a "7K+ Pulse Fiesta attendees against a 4,000 target" stat and a note card about The Juice x Lagos Cocktail Week. Events and partnerships read as the centre of gravity.
-- Reason to keep looking: a named employer, a concrete attendance number and the "WAN-IFRA Award winner" line.
-- Obvious next step: two buttons, "Let's work together" and "See the partnerships". The second is the right one for a reviewer and is clearly labelled.
+- What kind of professional: "Brand, Communications & Partnerships Strategist" and "Events & Partnerships Manager at Pulse" make the role clear. The headline "I build brands and experiences that connect." is warm but general; the supporting line carries the specifics.
+- What looks central: events and partnerships, through the portrait tag, the "7K+ Pulse Fiesta attendees against a 4,000 target" stat and the The Juice note card.
+- Reason to keep looking: "Part of Pulse Africa's WAN-IFRA award-winning team, Content Strategy Analyst, User Needs Impact Project 360" is now specific and correctly attributed.
+- Obvious next step: "See the partnerships" is clearly labelled and is the right route for a reviewer.
 
 **Pass B, skim (full page):**
-- Project I would open first, and why: The Juice x Lagos Cocktail Week. It is the only partnership card with an outcome ("~300 to 565" Instagram followers, "+88.3%"), and the description says "I led the activation", so contribution is explicit.
-- Fit with intended role: strong for partnerships, events and brand roles. Four 2026 partnerships, one featured campaign, capabilities and testimonials all point the same way.
-- Personal contribution vs team or company results: mixed. The Juice and ART X cards state personal roles. Moonshot says "My role: Pulse partnership team", which is a team, not a contribution. The WAN-IFRA line in the hero is a Pulse Africa award (the linked Ringier article credits Pulse Africa) presented under the person's name.
-- Career info and contact route: contact is clear (several "Let's work together" and "Let's talk" buttons opening Gmail compose, plus the email address). There is no LinkedIn, CV or employment history on the page.
-- Still uncertain: what Oluwatoni personally did on User Needs Impact Project 360; what she owned at Moonshot; employment history before Pulse.
+- Project I would open first, and why: The Juice x Lagos Cocktail Week, because it shows two outcomes ("100+" newsletter subscribers, "+88.3%" Instagram growth during the activation period) and "I led the activation". ART X Lagos is a close second with named interviewees.
+- Fit with intended role: strong. Partnerships, a featured brand campaign, a strengths section with proof lines, testimonials and published writing all point the same way.
+- Personal contribution vs team or company results: clear on all four cards and in the award line. Attendance and growth figures are presented as event or account results, not personal ones, which is the right framing.
+- Career info and contact route: email (Gmail compose) and LinkedIn in the final card and footer; no CV link.
+- Still uncertain: what the Moonshot partnership produced; whether the "100+" at The House covers both events or one.
 
-**Recruiting lens:** Role, current employer and a few concrete numbers are easy to find, and the testimonials name real people and titles. A recruiter will look for LinkedIn or a CV and not find one, and may question the award line once they notice it was Pulse's award.
+**Recruiting lens:** Role, employer, team award and LinkedIn are all within easy reach, and the claims read as honest. A CV link would save one step, but LinkedIn covers the core need.
 
-**Design hiring-manager lens (here, a brand or partnerships lead):** The partnership cards and the Pulse Fiesta brief, shift and result show strategic thinking in a scannable way. The middle of the page repeats itself, and the strongest brand outcome (Pulse Fiesta) sits below three explanatory sections.
+**Design hiring-manager lens (here, a brand or partnerships lead):** The partnership cards and the Pulse Fiesta brief, shift and result show commercial and strategic judgment in a scannable way. The new "What I do" cards tie each strength to named work, which is stronger than the previous three separate sections.
 
 ## D. Scorecard
 
 | Category | Weight | Rating (0-5) | Points | Evidence | Confidence |
 | --- | --- | --- | --- | --- | --- |
-| A. Positioning and role relevance | 15 | 4 | 12.0 | Eyebrow and lead state role and employer; headline alone is generic. | High |
-| B. Project selection and previews | 20 | 4 | 16.0 | Four partnership cards with category, role line, case-study button and reel; Moonshot role vague; strongest brand result lower on page. | High |
-| C. Credibility and attribution | 15 | 3 | 9.0 | Juice metric honestly qualified; WAN-IFRA shown as a personal award; Moonshot contribution unstated; testimonials named. | High |
-| D. Visual craft and art direction | 20 | 4 | 16.0 | Consistent type pairing, pastel stacked cards, real campaign visuals; reel previews are small stills (203 x 360 source) shown larger. | Medium |
-| E. Content hierarchy and scanning | 10 | 3 | 6.0 | Approach cards, Key Strengths and Capabilities overlap; recent-work ticker text is duplicated; first project starts about 1,580 px down on desktop. | High |
-| F. Navigation and next steps | 10 | 3 | 6.0 | Two-item nav works; case-study links all open; contact clear; no LinkedIn or CV route. | High |
-| G. Usability and accessibility | 10 | 3 | 6.0 | Hidden mobile menu links receive keyboard focus on desktop; reduced motion respected; no overflow at 390 px; contrast not measured. | Medium |
+| A. Positioning and role relevance | 15 | 4 | 12.0 | Role, employer and team award clear in the first viewport; headline general. | High |
+| B. Project selection and previews | 20 | 4 | 16.0 | Four partnership cards with role, result or focus, clip and case-study link; Moonshot lacks an outcome. | High |
+| C. Credibility and attribution | 15 | 4 | 12.0 | Award attributed to the team with role; Juice metric qualified; named interviewees at ART X. | High |
+| D. Visual craft and art direction | 20 | 4 | 16.0 | Consistent type, pastel stacked cards, real visuals; clip previews are small stills shown larger. | Medium |
+| E. Content hierarchy and scanning | 10 | 4 | 8.0 | Overlap merged, Pulse Fiesta follows the partnerships, page about 1,350 px shorter; minor repetition remains. | High |
+| F. Navigation and next steps | 10 | 4 | 8.0 | Two-item nav works; every card opens its page; email and LinkedIn present; no CV. | High |
+| G. Usability and accessibility | 10 | 4 | 8.0 | Hidden menu no longer focusable; reduced motion respected; ticker text duplicated for screen readers; contrast not measured. | Medium |
 
-**Total:** 71.0 / 100
+**Total:** 80.0 / 100 (previous review: 71.0)
 
 These ratings are editorial judgments for prioritizing changes, not a hiring prediction.
 
 ## E. Prioritized changes
 
-### 1. Attribute the WAN-IFRA award correctly
-- **Where:** hero proof line "WAN-IFRA Award winner / User Needs Impact Project 360, Pulse Africa".
-- **What I found:** the line sits under the name and reads as a personal award. The linked Ringier announcement credits Pulse Africa, and no part of the homepage says what Oluwatoni did on the project.
-- **Likely effect (interpretation):** a careful reviewer who checks the link may discount the other claims on the page.
-- **Change:** reframe as team recognition with a personal role, for example "Part of Pulse Africa's WAN-IFRA award-winning User Needs strategy: [specific fact needed, your role]". Add the same role line to the User Needs card on the brand portfolio page.
-- **Priority:** important | **Effort:** small, assuming you can state your role in one line.
-- **How to check it:** a reader who has not seen the site can say whose award it was and what you did, from the line alone.
+### 1. Give Moonshot an outcome
+- **Where:** Moonshot by TechCabal x Pulse card, "Focus: Industry engagement & thought leadership".
+- **What I found:** the other three cards show a result (interviews, subscribers, attendance); this one shows a focus area.
+- **Likely effect (interpretation):** it reads as the weakest card and the one a reviewer skips.
+- **Change:** replace "Focus" with a concrete result, for example what Pulse produced or hosted at Moonshot: "[specific fact needed]".
+- **Priority:** important | **Effort:** small, assuming you have one fact to add.
+- **How to check it:** every partnership card's second stat names something that happened.
 
-### 2. Stop keyboard focus entering the hidden mobile menu
-- **Where:** `.sheet` mobile menu, present on desktop.
-- **What I found:** in the Tab pass, after "Let's talk" focus moved to "Home", "Brand work" and "Let's work together" inside the closed, invisible mobile menu.
-- **Likely effect (interpretation):** keyboard users lose sight of focus for three stops on every page.
-- **Change:** add `inert` (or `visibility: hidden`) to the menu while it is closed and remove it when opened.
-- **Priority:** important | **Effort:** small.
-- **How to check it:** Tab from the top of the page; focus goes from "Let's talk" straight to "Let's work together" in the hero.
-
-### 3. Give recruiters a career route
-- **Where:** nav, footer links and the final call to action.
-- **What I found:** the only contact routes are Gmail compose and the email address. There is no LinkedIn profile, CV or summary of roles before Pulse.
-- **Likely effect (interpretation):** a recruiter screening several candidates has nowhere to check history and dates.
-- **Change:** add LinkedIn and a CV (PDF or a page) to the footer links and next to "Email me" in the final card.
-- **Priority:** important | **Effort:** small, assuming both exist.
-- **How to check it:** from any section a visitor can reach LinkedIn or a CV in one click.
-
-### 4. Merge the three "what I do" sections
-- **Where:** approach cards (Insight and discovery, Strategy and narrative, Execution and impact), "Key Strengths." and "What I bring to the table."
-- **What I found:** twelve cards in a row describe method and skills; "Key Strengths" and "Capabilities" cover the same ground (brand, partnerships, experiences).
-- **Likely effect (interpretation):** the Pulse Fiesta campaign, the page's strongest brand outcome, is pushed far down and the middle of the page reads as repetition.
-- **Change:** keep the statement and either the three approach cards or Key Strengths, fold the six capabilities into one compact list, and move Pulse Fiesta up to follow the partnerships.
-- **Priority:** important | **Effort:** medium.
-- **How to check it:** on a 1440 x 900 screen, Pulse Fiesta starts within two scrolls of the last partnership card.
-
-### 5. State what you owned at Moonshot
-- **Where:** Moonshot by TechCabal x Pulse card, "My role: Pulse partnership team".
-- **What I found:** the other three cards name a personal contribution; this one names a team.
-- **Likely effect (interpretation):** it reads as the weakest card and invites the question of whether you were involved.
-- **Change:** replace with your actual contribution, for example "My role: [specific fact needed]".
+### 2. Hide the duplicated ticker text from screen readers
+- **Where:** "Recent work" ticker under the hero.
+- **What I found:** the page text contains the six ticker items twice, because the scrolling loop duplicates the list without hiding the copy.
+- **Likely effect (interpretation):** screen-reader users hear the same six items twice.
+- **Change:** mark the duplicated copy `aria-hidden="true"`, as the brand logo marquee already does.
 - **Priority:** polish | **Effort:** small.
-- **How to check it:** every partnership card starts its role line with a verb describing your work.
+- **How to check it:** the page's accessible text lists each ticker item once.
+
+### 3. Remove the repeated Moonshot role line
+- **Where:** Moonshot card description ("I coordinated it from conception to execution.") and its "My role" stat ("Coordinated the partnership from conception to execution").
+- **What I found:** the same sentence appears twice within a few lines.
+- **Likely effect (interpretation):** repetition makes a short card feel thinner.
+- **Change:** drop the sentence from the description and keep the stat.
+- **Priority:** polish | **Effort:** small.
+- **How to check it:** each fact on the card appears once.
+
+### 4. Clarify the attendance figure at The House
+- **Where:** The House card, "Pulse Creator Collective attended, alongside 100+ creators, designers and fashion enthusiasts."
+- **What I found:** two events are named, but the figure does not say which it covers.
+- **Likely effect (interpretation):** an interviewer may ask, and the answer should already be on the page.
+- **Change:** add "across both events" or name the event.
+- **Priority:** polish | **Effort:** small.
+- **How to check it:** a reader can say which event the 100+ figure refers to.
+
+### 5. Sharper clip previews
+- **Where:** the four partnership clips.
+- **What I found:** the previews are small still frames (203 x 360 source) shown at roughly 460 px tall.
+- **Likely effect (interpretation):** they look slightly soft next to the crisp portrait and Pulse Fiesta images.
+- **Change:** replace them with higher-resolution frames or the original GIF files.
+- **Priority:** polish | **Effort:** small, assuming the originals are available.
+- **How to check it:** at 1440 px the clip previews look as sharp as the other images.
 
 ## F. Section decisions
 
 | Section | Decision | Why |
 | --- | --- | --- |
-| Hero | Improve | Keep the layout and portrait; sharpen the supporting line with proof and fix the award attribution. |
-| Recent-work ticker | Improve | Useful at a glance, but its text is duplicated for screen readers; hide the duplicate copy. |
-| Brands I've worked with | Keep | Real logos, quick credibility, does not block the work. |
-| Strategic partnerships | Keep | Strongest section: clear partners, roles, reels and case-study links. |
-| Statement and approach cards | Keep (trimmed) | The statement is distinctive; the cards overlap with Key Strengths. |
-| Key Strengths | Remove or merge | Repeats the approach cards and Capabilities. |
-| Capabilities | Improve | Compress into one shorter list with its evidence chips. |
-| Pulse Fiesta featured campaign | Move | Up, directly after the partnerships. |
-| Testimonials | Keep | Named people with titles, specific praise. |
-| About | Keep | Real photo, current role, concise tiles. |
-| Published work | Keep | Six real, linked BusinessDay articles support the communications claim. |
-| Final call to action | Improve | Add LinkedIn and CV beside "Email me". |
+| Hero | Keep | Clear role, employer and correctly attributed award. |
+| Recent-work ticker | Improve | Hide the duplicated copy from screen readers. |
+| Brands I've worked with | Keep | Real logos, quick credibility. |
+| Strategic partnerships | Keep (one card to improve) | Strongest section; Moonshot needs an outcome. |
+| Pulse Fiesta featured campaign | Keep | Strong brief, shift and result, now in the right place. |
+| What I do | Keep | Merged section ties each strength to named work. |
+| Testimonials | Keep | Named people with titles. |
+| About | Keep | Real photo, current role, skills. |
+| Published work | Keep | Six real, linked articles. |
+| Final call to action | Keep | Email and LinkedIn side by side. |
 
 ## G. Copy and project-preview revisions
 
-**Hero directions:**
-1. Keep "I build brands and experiences that connect." and change the supporting line to: "I'm Oluwatoni Victoria, Events & Partnerships Manager at Pulse. I led the repositioning of Pulse Fiesta and develop partnerships with platforms like ART X Lagos, Lagos Cocktail Week and Lagos Fashion Week."
-2. "Brand, communications and partnerships at Pulse. I build the partnerships and experiences audiences show up for."
-3. "I turn brand strategy into partnerships, events and stories people show up for."
+**Hero directions (optional; the current headline works with its supporting line):**
+1. Keep the current headline and supporting line.
+2. "I build brands, partnerships and experiences audiences show up for."
+3. "Brand, communications and partnerships at Pulse, from Pulse Fiesta to Lagos Fashion Week."
 
-**Recommended:** 1, because it keeps the headline you chose and replaces the general supporting line with named, verifiable work.
-**Supporting line (award):** "Part of Pulse Africa's WAN-IFRA award-winning User Needs strategy: [specific fact needed, your role]."
+**Recommended:** 1, because the supporting line already names the role and the proof line carries the award; the gain from changing the headline is small.
+**Supporting line:** keep as is.
 **Primary action:** "See the partnerships" | **Secondary action:** "Let's work together"
 
 **Project previews:**
-- **Moonshot by TechCabal x Pulse**: "My role: [specific fact needed]". Keep the focus line as it is.
-- **The Juice x Lagos Cocktail Week**: already strong. Keep "I led the activation" and the qualified Instagram metric.
+- **Moonshot by TechCabal x Pulse**: "A media partnership that put Pulse's platforms inside the conversations shaping Africa's technology, business and creative ecosystem." Role: "Coordinated the partnership from conception to execution". Result: "[specific fact needed]".
+- **The House x Pulse x Lagos Fashion Week**: add "across both events" (or the event name) after the 100+ figure if that is accurate.
 
 ## H. Recommended page sequence
 
-1. Hero: role, current employer, proof.
-2. Brands strip: quick credibility.
-3. Strategic partnerships: the main evidence.
-4. Pulse Fiesta featured campaign: the strongest brand outcome, with a link to the brand portfolio.
-5. Statement with either the approach cards or Key Strengths, not both.
-6. Capabilities as a compact list.
-7. Testimonials, About, Published work.
-8. Final call to action with email, LinkedIn and CV.
+Keep the current order. Hero, brands, partnerships, Pulse Fiesta, What I do, testimonials, About, writing and contact now moves from who, to proof, to how, to trust, to contact.
 
 ## I. Next actions
 
-1. Write one line stating your role on User Needs Impact Project 360 and use it in the hero proof line and on the brand portfolio card.
-2. Add `inert` to the closed mobile menu and re-run a Tab pass.
-3. Add your LinkedIn URL and a CV to the footer and final call to action.
+1. Write one result line for Moonshot and put it in the card's second stat.
+2. Add `aria-hidden="true"` to the duplicated ticker list.
+3. Remove the repeated role sentence from the Moonshot card description.
 
 **Questions that would sharpen this review (max three):**
-- Which roles or clients is this portfolio mainly for: in-house brand and partnerships roles, agency roles, or freelance partners?
-- What exactly was your role on User Needs Impact Project 360 and on the Moonshot partnership?
-- Do you have a LinkedIn profile and CV you are happy to link?
+- What did the Moonshot partnership produce for Pulse (sessions, content, reach or a renewal)?
+- Does the 100+ attendance figure cover both events at The House?
+- Do you want a CV link, or is LinkedIn enough for the roles you are targeting?
 
-**Evidence to inspect after clicking:** Do the case studies show the opportunity and why it mattered to each partner, what Oluwatoni personally did versus the wider Pulse team, and what happened as a result (content published, reach, revenue or relationship renewal)? These are covered in the separate case-study reviews.
+**Evidence to inspect after clicking:** whether each case study states the goal, separates your role from the team's, and shows what was produced and how it performed. These are covered in the separate case-study reviews.

@@ -1,67 +1,72 @@
-# Putting Pulse inside Africa's tech conversations: Moonshot by TechCabal
+# Moonshot by TechCabal x Pulse: putting Pulse in the room
 
-A media partnership connecting Pulse's platforms with influential conversations across Africa's technology, business and creative ecosystem.
+Connecting Pulse's media platforms with influential conversations across Africa's technology, business and creative ecosystem.
 
 | | |
 |---|---|
-| **Role** | [ADD: what you owned, for example negotiated the package or coordinated Pulse's coverage] |
-| **Partners** | Pulse and Moonshot by TechCabal |
-| **Type** | Strategic media partnership |
-| **Timeline** | 2026, [ADD: dates] |
+| **Role** | Coordinated the partnership from conception to execution |
+| **Partner** | Moonshot by TechCabal |
+| **Type** | Media partnership |
+| **Year** | 2026 |
 
-**TL;DR:** Moonshot by TechCabal convenes conversations across Africa's technology, business and creative ecosystem. I worked on Pulse's partnership with Moonshot, creating opportunities to connect Pulse's media platforms with those conversations. [ADD: the headline result, for example the content Pulse produced and its reach]
+**TL;DR:** I coordinated a media partnership between Pulse and Moonshot by TechCabal from conception to execution, made sure every agreed deliverable was delivered, and positioned Pulse within the conversations shaping Africa's technology, business and creative ecosystem. [ADD: the headline result]
 
 ![Pulse on stage at Moonshot by TechCabal](../../assets/reels/moonshot-techcabal.webp)
-*Pulse at Moonshot by TechCabal. Watch the reel: https://www.instagram.com/reel/DfZLroPsKq5/*
+*Pulse on stage at Moonshot by TechCabal.*
 
-## Why it mattered
+## The context
 
-For Pulse, the partnership was a route into Africa's technology and business conversations. [ADD: what Pulse wanted from this audience, for example credibility with tech and business readers or new advertiser relationships]
+Moonshot by TechCabal convenes conversations across Africa's technology, business and creative ecosystem. For Pulse, the partnership was a route into those industry conversations.
 
-For TechCabal, partnering with Pulse offered [ADD: what Moonshot gained].
+**The goal:** [ADD: what Pulse specifically wanted, for example a stage session or a content series]
+
+For TechCabal, the partnership offered [ADD: what Moonshot gained].
 
 ## What I did
 
-[ADD: two or three specific things you did, for example shaping the media package, coordinating Pulse's on-site content, or managing the relationship with the TechCabal team]
+I coordinated the partnership from conception to execution: [ADD: the main steps, for example scoping the deal, agreeing deliverables, working with the teams on the day]. I made sure every agreed deliverable was delivered.
+
+## What we delivered
+
+- [ADD: deliverable one]
+- [ADD: deliverable two]
+- [ADD: deliverable three]
 
 <div class="visual-slot" style="border: 2px dashed #87CEEB; border-radius: 10px; padding: 16px 20px; margin: 24px 0; background: rgba(135, 206, 235, 0.08);">
-<p><strong>Visual: Annotated screen</strong></p>
-<p><strong>Show:</strong> Pulse's coverage or content from Moonshot (posts, articles or videos), with callouts naming the format and the speaker or topic.</p>
-<p><strong>Why:</strong> Shows what the partnership actually produced, which the case study currently only links to.</p>
+<p><strong>Visual: Content grid</strong></p>
+<p><strong>Show:</strong> One photo or screenshot per deliverable, each captioned with what it was.</p>
+<p><strong>Why:</strong> Makes "every agreed deliverable" concrete.</p>
 </div>
 
 ## The result
 
-[ADD: what was delivered, for example the number of pieces published, and any measured reach or engagement with dates and source]
+Pulse was present at Moonshot and in the conversation, as captured on Pulse's Instagram.
+
+[ADD: one outcome for Pulse, with source]
 
 <div class="visual-slot" style="border: 2px dashed #87CEEB; border-radius: 10px; padding: 16px 20px; margin: 24px 0; background: rgba(135, 206, 235, 0.08);">
-<p><strong>Visual: Metric chart</strong></p>
-<p><strong>Show:</strong> Reach or views for the Moonshot content, with dates and source.</p>
-<p><strong>Why:</strong> Gives the partnership a measurable result to discuss.</p>
+<p><strong>Visual: Published post screenshot</strong></p>
+<p><strong>Show:</strong> Pulse's Moonshot post with its engagement visible.</p>
+<p><strong>Why:</strong> Gives the result a measurable trace.</p>
 </div>
 
 ## What I'd do differently
 
-[ADD: one specific thing you would change, and why]
+[ADD: one thing you learned or would change]
 
 ---
 
 ## Before you publish
 
-Placeholders to fill, in order:
-
-- [ ] [ADD: what you owned]
-- [ ] [ADD: dates]
 - [ ] [ADD: the headline result]
-- [ ] [ADD: what Pulse wanted from this audience]
-- [ ] [ADD: what Moonshot gained]
-- [ ] [ADD: two or three specific things you did]
-- [ ] [ADD: what was delivered and its reach]
+- [ ] [ADD: the goal]
+- [ ] [ADD: what TechCabal gained]
+- [ ] [ADD: the main coordination steps]
+- [ ] [ADD: the deliverables]
+- [ ] [ADD: one outcome, with source]
 - [ ] [ADD: one thing you would do differently]
-
-If several of these cannot be filled publicly, present this as a short "also worked on" entry instead of a full case study.
 
 Visuals to make (the sky blue boxes above):
 
-- [ ] Annotated screen: Pulse's Moonshot content with callouts
-- [ ] Metric chart: reach or views for the Moonshot content
+- [ ] Content grid: one image per deliverable
+- [ ] Published post screenshot with engagement

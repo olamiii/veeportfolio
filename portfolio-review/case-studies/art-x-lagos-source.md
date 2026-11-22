@@ -1,62 +1,44 @@
 # Source: art-x-lagos
 
-Extracted 22 November 2026 from partnerships/art-x-lagos.html and the homepage card.
+Extracted 22 November 2026 (second review) from partnerships/art-x-lagos.html and the homepage card.
 
 HOMEPAGE CARD
 Cultural Partnerships · Media · Editorial Storytelling
 ART X Lagos × Pulse
-A media partnership linking Pulse's storytelling platforms with one of Africa's leading contemporary art platforms, built to explore the people and ideas shaping the African art ecosystem.
+A media partnership that strengthened Pulse's presence in the African art and culture ecosystem, with exclusive content featuring ART X founder Tokini Peterside, curator Dr Jareh Das and other gallerists and curators.
 My role
 Developed & secured the partnership
-Focus
-Editorial storytelling beyond event coverage
+Result
+Exclusive interviews with ART X's founder and curators
 View case study
 →
-
 CASE PAGE
 ← All partnerships
-CULTURAL PARTNERSHIPS · MEDIA · EDITORIAL STORYTELLING
+Cultural Partnerships · Media · Editorial Storytelling
 ART X Lagos × Pulse
-A media partnership connecting Pulse's media and storytelling capabilities with one of Africa's leading contemporary art platforms, and with the people, ideas and creative voices shaping the African art ecosystem.
-PARTNER
-ART X Lagos
-TYPE
-Media partnership
-YEAR
-2026
-MY ROLE
-Developed and secured the partnership
-▶ Watch on Instagram
-The context
-ART X Lagos is one of Africa's leading contemporary art platforms.
-For Pulse, the opportunity went beyond covering an art event: it was a way into the ecosystem behind it.
-Editorial storytelling could bring those creative voices to Pulse's audience.
+A media partnership built to strengthen Pulse's presence in the African art and culture ecosystem, and to create exclusive content with the people shaping it.
+PartnerART X Lagos
+TypeMedia partnership
+Year2026
+My roleDeveloped and secured the partnership
+▶ Watch the interview
+Exclusive interview with Tokini Peterside, Founder of ART X Lagos.
+The goal
+Strengthen Pulse's presence within the African art and culture ecosystem.
+Create exclusive content around the event, going beyond conventional event coverage.
 My contribution
 Developed the partnership opportunity and the alignment between both platforms.
 Worked on the partnership proposition and stakeholder engagement.
-Explored editorial opportunities that create value beyond conventional event coverage.
 Prioritised access to influential cultural voices and deeper storytelling.
-Worked towards a stronger connection between the ART X Lagos experience and Pulse's audience.
-The outcome
+The result
 Media partnership secured between Pulse and ART X Lagos.
-An editorial approach built around people and ideas, not just event highlights.
-WHAT IT SHOWS
-Spotting a cultural partnership opportunity and connecting a media platform with an influential creative ecosystem.
-NEXT PARTNERSHIP
-The Juice × Lagos Cocktail Week
-→
-LET'S WORK TOGETHER
-Have a partnership worth building?
-Brands, platforms and cultural moments that belong together. Let's talk about yours.
-Email me
-→
-All partnerships
-
+Exclusive content with Tokini Peterside, Founder, ART X Lagos.
+Exclusive content with Dr Jareh Das, curator of the ART X Icon section.
+Further exclusive content with gallerists and curators.
+What it shows
+Spotting a cultural partnership opportunity and turning access into exclusive content for a media platform.
 IMAGES
-../assets/reels/art-x-lagos.webp | Pulse at ART X Lagos
-
-LINKS
-https://www.instagram.com/reels/Dfb-gXpiNJj/
+../assets/reels/art-x-lagos.webp | Exclusive Pulse interview with Tokini Peterside, Founder of ART X Lagos
 
 ORIGINAL BRIEF FROM OLUWATONI (2026 partnerships)
 PROJECT 1: ART X LAGOS x PULSE
@@ -67,3 +49,8 @@ My contribution included: developing the partnership opportunity and alignment b
 The case study should demonstrate my ability to identify cultural partnership opportunities and connect media platforms with influential creative ecosystems.
 Do not imply that every proposed interview or access opportunity was delivered unless confirmed.
 Instagram reel: https://www.instagram.com/reels/Dfb-gXpiNJj/
+
+LATER FACTS FROM OLUWATONI (22 November 2026)
+Goal: Strengthen Pulse's presence within the African art and culture ecosystem, and create exclusive content around the event.
+KPI achieved: Created exclusive content with Dr Jareh Das, curator of the ART X Icon section; Tokini Peterside, Founder, ART X; and other gallerists and curators for Pulse.
+The linked reel is one of the exclusive interviews Pulse did with the Founder of ART X.
