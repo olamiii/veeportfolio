@@ -216,6 +216,33 @@
     });
   }
 
+  /* ---------- Lightbox for image groups ---------- */
+  const lb = document.querySelector(".lightbox");
+  if (lb && typeof lb.showModal === "function") {
+    const lbImg = lb.querySelector("img"), lbCap = lb.querySelector("figcaption");
+    let group = [], idx = 0, opener = null;
+    const show = (i) => {
+      idx = (i + group.length) % group.length;
+      const t = group[idx];
+      lbImg.src = t.dataset.src;
+      lbImg.alt = t.querySelector("img").alt;
+      lbCap.textContent = t.dataset.caption + "  (" + (idx + 1) + " of " + group.length + ")";
+    };
+    $$("[data-lightbox]").forEach((t) => t.addEventListener("click", () => {
+      group = $$('[data-lightbox="' + t.dataset.lightbox + '"]');
+      opener = t; show(group.indexOf(t)); lb.showModal();
+    }));
+    lb.querySelector(".lightbox__prev").addEventListener("click", () => show(idx - 1));
+    lb.querySelector(".lightbox__next").addEventListener("click", () => show(idx + 1));
+    lb.querySelector(".lightbox__close").addEventListener("click", () => lb.close());
+    lb.addEventListener("click", (e) => { if (e.target === lb) lb.close(); });
+    lb.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") show(idx - 1);
+      if (e.key === "ArrowRight") show(idx + 1);
+    });
+    lb.addEventListener("close", () => { if (opener) opener.focus(); });
+  }
+
   /* ---------- Year ---------- */
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 })();
