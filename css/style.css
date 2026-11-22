@@ -901,3 +901,22 @@ a.svc:hover footer i { background: var(--ink); color: var(--on-ink); transform: 
 @media (max-width: 860px) { .cs-story, .cs-metric--3 { grid-template-columns: 1fr; } }
 
 .cs-metric--3 strong { white-space: nowrap; font-size: clamp(36px, 4.4vw, 64px); }
+
+/* ---------- Brand portfolio: LinkedIn posts ---------- */
+.li-list { display: grid; gap: 16px; }
+.li-post { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(24px, 4vw, 48px); padding: clamp(18px, 2.5vw, 28px); border-radius: 28px; background: var(--card); box-shadow: inset 0 0 0 1px var(--line); align-items: start; }
+.li-post__visual { position: sticky; top: 100px; }
+.li-post__media { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; border-radius: 18px; scrollbar-width: thin; }
+.li-post__media img { flex: 0 0 100%; width: 100%; scroll-snap-align: start; border-radius: 18px; object-fit: cover; background: var(--bg-2); }
+.li-post__media--carousel img { flex-basis: 86%; }
+.li-post__media:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.li-post__hint { margin: 10px 0 0; font-size: 12px; color: var(--muted-2); text-align: center; }
+.li-post__head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.li-post__badge { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 10px; background: #0a66c2; color: #fff; font-weight: 700; font-size: 16px; letter-spacing: -.02em; }
+.li-post__head b { display: block; font-size: 15px; font-weight: 600; }
+.li-post__head small { color: var(--muted); font-size: 13px; }
+.li-post h3 { margin: 0 0 14px; font-size: clamp(24px, 2.4vw, 32px); font-weight: 500; letter-spacing: -0.04em; line-height: 1.1; }
+.li-post__caption p { margin: 0 0 12px; color: var(--ink-2); font-size: 15px; line-height: 1.55; }
+.li-post__tags { margin: 4px 0 20px; font-size: 13px; font-weight: 500; color: #0a66c2; word-spacing: 4px; }
+:root[data-theme="dark"] .li-post__tags { color: #70b5f9; }
+@media (max-width: 860px) { .li-post { grid-template-columns: 1fr; } .li-post__visual { position: static; } }
