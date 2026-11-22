@@ -185,7 +185,13 @@
 
   /* ---------- Ticker: duplicate track for seamless loop ---------- */
   const track = document.querySelector(".ticker__track");
-  if (track) track.innerHTML += track.innerHTML;
+  if (track) {
+    [...track.children].forEach((item) => {
+      const copy = item.cloneNode(true);
+      copy.setAttribute("aria-hidden", "true");
+      track.appendChild(copy);
+    });
+  }
 
   /* ---------- Brands marquee: duplicate list for a seamless loop ---------- */
   const brandsTrack = document.querySelector(".brands__track");

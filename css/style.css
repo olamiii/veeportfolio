@@ -955,3 +955,11 @@ a.svc:hover footer i { background: var(--ink); color: var(--on-ink); transform: 
 .lightbox__prev { left: 18px; top: 50%; transform: translateY(-50%); }
 .lightbox__next { right: 18px; top: 50%; transform: translateY(-50%); }
 @media (max-width: 600px) { .lightbox figure { padding: 64px 12px 24px; } .lightbox__prev, .lightbox__next { top: auto; bottom: 18px; transform: none; } }
+
+/* Delivered / partner-gain row on case pages */
+.fsr--2, .fsr--1 { margin-top: 14px; }
+.fsr--2 { grid-template-columns: 1.6fr 1fr; }
+.fsr--1 { grid-template-columns: 1fr; }
+.fsr li b { color: var(--ink); font-weight: 600; }
+.fsr__gain p { margin: 0; font-family: var(--serif); font-size: clamp(22px, 2.2vw, 28px); line-height: 1.25; letter-spacing: -0.015em; }
+@media (max-width: 900px) { .fsr--2 { grid-template-columns: 1fr; } }
