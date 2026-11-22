@@ -186,6 +186,15 @@
   const track = document.querySelector(".ticker__track");
   if (track) track.innerHTML += track.innerHTML;
 
+  /* ---------- Brands marquee: duplicate list for a seamless loop ---------- */
+  const brandsTrack = document.querySelector(".brands__track");
+  if (brandsTrack) {
+    const copy = brandsTrack.querySelector("ul").cloneNode(true);
+    copy.setAttribute("aria-hidden", "true");
+    copy.querySelectorAll("img").forEach((img) => (img.alt = ""));
+    brandsTrack.appendChild(copy);
+  }
+
   /* ---------- Year ---------- */
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 })();

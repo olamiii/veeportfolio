@@ -727,3 +727,52 @@ a.svc:hover footer i { background: var(--ink); color: #fff; transform: rotate(-4
 .reel--link:hover .reel__play { background: var(--accent-2); transform: translateX(-50%) translateY(-2px); }
 .reel--link:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .reel__play { z-index: 2; }
+
+/* Back-to-top anchor (the nav is fixed, so it can't be the scroll target) */
+.top-anchor { position: absolute; top: 0; left: 0; width: 1px; height: 1px; }
+
+/* ---------- Brands: logo marquee panning left ---------- */
+.logos { align-items: center; }
+.brands { flex: 1; min-width: 0; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.brands__track { display: flex; width: max-content; animation: brands 45s linear infinite; }
+.brands:hover .brands__track { animation-play-state: paused; }
+.brands ul { display: flex; align-items: center; gap: 14px; list-style: none; margin: 0; padding: 0 14px 0 0; }
+.brand { flex-shrink: 0; height: 84px; border-radius: 18px; overflow: hidden; background: #fff; box-shadow: inset 0 0 0 1px var(--line), var(--sh-sm); display: grid; place-items: center; transition: transform .5s var(--ease); }
+.brand:hover { transform: translateY(-3px); }
+.brand img { display: block; height: 100%; width: auto; }
+.brand--fill { width: 84px; }
+.brand--fill img { width: 100%; height: 100%; object-fit: cover; }
+.brand--white { padding: 10px 16px; }
+.brand--white img { max-height: 64px; max-width: 170px; object-fit: contain; }
+@keyframes brands { to { transform: translateX(-50%); } }
+@media (max-width: 600px) { .brand { height: 68px; } .brand--fill { width: 68px; } .brand--white img { max-height: 50px; } }
+
+/* ---------- Partnerships: no coloured containers, videos kept ---------- */
+.stack .proj {
+  position: relative; top: auto; transform: none !important; filter: none !important;
+  background: none; box-shadow: none; border-radius: 0; min-height: 0;
+  padding: clamp(40px, 5vw, 64px) 0; margin: 0; border-top: 1px solid var(--line-2);
+}
+.stack .proj:last-child { border-bottom: 1px solid var(--line-2); }
+.stack .proj__media.ph { background: none; box-shadow: none; min-height: 0; padding: 0; }
+.stack .proj__media::after { display: none; }
+.stack .proj__copy { justify-content: center; }
+.stack .proj__copy .chip { background: var(--card); box-shadow: inset 0 0 0 1px var(--line); }
+.stack .reel { height: clamp(360px, 34vw, 460px); }
+@media (max-width: 860px) { .stack .reel { height: 360px; } .stack .proj__media { order: -1; } }
+
+/* ---------- Brand work grid: 2 columns, social + Citadel full width ---------- */
+.wgrid { grid-template-columns: 1fr 1fr; }
+.wcard--award { grid-column: auto; }
+.wcard--social { grid-column: 1 / -1; }
+.highlights { list-style: none; margin: 10px 0 0; padding: 0; width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.highlights a { display: flex; flex-direction: column; gap: 6px; height: 100%; padding: 16px 18px; border-radius: 16px; background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+.highlights small { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-2); }
+.highlights span { font-size: 14px; line-height: 1.45; color: var(--ink-2); }
+.highlights i { margin-top: auto; padding-top: 4px; font-style: normal; font-size: 13px; font-weight: 600; }
+.highlights a:hover { transform: translateY(-3px); box-shadow: inset 0 0 0 1px var(--line), var(--sh); }
+.highlights a:hover i { color: var(--accent-2); }
+@media (max-width: 1080px) { .wcard--award { grid-column: auto; } .highlights { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 860px) { .wgrid { grid-template-columns: 1fr; } .highlights { grid-template-columns: 1fr; } }
+
+@media (max-width: 860px) { .logos .brands { width: 100%; } }

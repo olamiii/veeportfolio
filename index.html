@@ -13,9 +13,10 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <span id="top" class="top-anchor" aria-hidden="true"></span>
 
   <!-- ================= NAV ================= -->
-  <header class="nav" id="top">
+  <header class="nav">
     <div class="nav__inner">
       <a href="#top" class="logo" aria-label="Oluwatoni Victoria, home">
         <span class="logo__mark">O</span>
@@ -47,7 +48,7 @@
       <div class="wrap hero__grid">
         <div class="hero__copy">
           <p class="eyebrow" data-fade>Brand, Communications &amp; Partnerships Strategist</p>
-          <h1 class="display" data-split>I build brands, partnerships and experiences that <em>connect.</em></h1>
+          <h1 class="display" data-split>I build brands and experiences that <em>connect.</em></h1>
           <p class="hero__lead" data-fade data-d="2">
             I'm Oluwatoni Victoria, Events &amp; Partnerships Manager at Pulse. I work at the intersection of brands, storytelling and partnerships, turning ideas into meaningful connections and experiences.
           </p>
@@ -100,21 +101,25 @@
     <!-- ================= BRANDS ================= -->
     <section class="logos wrap" aria-label="Brands I've worked with">
       <p>Brands I've worked with</p>
-      <ul>
-        <li class="lg lg--wide">PULSE FIESTA</li>
-        <li class="lg">Pulse Influencer Awards</li>
-        <li class="lg lg--italic">Ballantine's</li>
-        <li class="lg lg--serif">CHIVAS</li>
-        <li class="lg lg--wide">OLMECA</li>
-        <li class="lg">LiveScoreBet</li>
-        <li class="lg">durex</li>
-        <li class="lg lg--italic">kiss</li>
-        <li class="lg">eventporte</li>
-        <li class="lg"><b>M</b>Monica</li>
-        <li class="lg lg--serif">Capital Gardens</li>
-        <li class="lg lg--wide">CITADEL VIEWS</li>
-        <li class="lg lg--serif">Hotels by Ned</li>
-      </ul>
+      <div class="brands" aria-label="Brand logos">
+        <div class="brands__track">
+          <ul>
+            <li class="brand brand--fill"><img src="assets/brands/pulse-fiesta.jpg" alt="Pulse Fiesta" title="Pulse Fiesta" /></li>
+            <li class="brand brand--fill"><img src="assets/brands/pulse-influencer-awards.jpg" alt="Pulse Influencer Awards" title="Pulse Influencer Awards" /></li>
+            <li class="brand brand--white"><img src="assets/brands/ballantines.jpg" alt="Ballantine&#x27;s" title="Ballantine&#x27;s" /></li>
+            <li class="brand brand--fill"><img src="assets/brands/chivas.jpg" alt="Chivas" title="Chivas" /></li>
+            <li class="brand brand--fill"><img src="assets/brands/olmeca-tequila.jpg" alt="Olmeca Tequila" title="Olmeca Tequila" /></li>
+            <li class="brand brand--white"><img src="assets/brands/livescorebet.jpg" alt="LiveScoreBet" title="LiveScoreBet" /></li>
+            <li class="brand brand--white"><img src="assets/brands/durex.jpg" alt="Durex" title="Durex" /></li>
+            <li class="brand brand--fill"><img src="assets/brands/kiss-condoms.jpg" alt="Kiss Condoms" title="Kiss Condoms" /></li>
+            <li class="brand brand--white"><img src="assets/brands/eventporte.jpg" alt="EventPorte" title="EventPorte" /></li>
+            <li class="brand brand--fill"><img src="assets/brands/monica.jpg" alt="Monica" title="Monica" /></li>
+            <li class="brand brand--white"><img src="assets/brands/capital-gardens.jpg" alt="Capital Gardens" title="Capital Gardens" /></li>
+            <li class="brand brand--white"><img src="assets/brands/citadel-views.jpg" alt="Citadel Views" title="Citadel Views" /></li>
+            <li class="brand brand--white"><img src="assets/brands/hotels-by-ned.jpg" alt="Hotels by Ned" title="Hotels by Ned" /></li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- ================= POINT OF VIEW + APPROACH ================= -->
@@ -146,7 +151,7 @@
     <section class="framework section wrap" id="expertise">
       <header class="sh sh--c">
         <p class="eyebrow">What I do</p>
-        <h2 class="h2" data-split>Three strengths, one <em>practice.</em></h2>
+        <h2 class="h2" data-split>Key <em>Strengths.</em></h2>
       </header>
       <div class="layers">
         <article class="layer" data-fade>
@@ -175,7 +180,7 @@
             <p class="eyebrow">Strategic partnerships · 2026</p>
             <h2 class="h2" data-split>Where brands, media and culture <em>meet.</em></h2>
           </div>
-          <p class="sh__aside">Four collaborations from my work at Pulse, connecting its media, newsletter and creator platforms with art, lifestyle, technology and fashion.</p>
+          <p class="sh__aside">Four partnerships from my work at Pulse, connecting its media, newsletter and creator platforms with art, lifestyle, technology and fashion.</p>
         </header>
 
         <div class="stack">
@@ -207,7 +212,7 @@
               <a href="partnerships/the-juice-lagos-cocktail-week.html" class="btn btn--dark btn--sm">View case study <span class="btn__arrow">→</span></a>
             </div>
             <figure class="proj__media ph ph--peach ph--reel">
-              <a class="reel reel--link" href="https://www.instagram.com/reels/De1WVp2IsPk/" target="_blank" rel="noopener" aria-label="Watch the The Juice × Lagos Cocktail Week reel on Instagram"><img src="assets/reels/the-juice-lagos-cocktail-week.webp" alt="The Juice booth entrance at Lagos Cocktail Week" loading="lazy" /><span class="reel__play" aria-hidden="true">▶ Watch on Instagram</span></a>
+              <a class="reel reel--link" href="https://www.instagram.com/reels/De1WVp2IsPk/" target="_blank" rel="noopener" aria-label="Watch The Juice × Lagos Cocktail Week reel on Instagram"><img src="assets/reels/the-juice-lagos-cocktail-week.webp" alt="The Juice booth entrance at Lagos Cocktail Week" loading="lazy" /><span class="reel__play" aria-hidden="true">▶ Watch on Instagram</span></a>
             </figure>
           </article>
 
@@ -239,7 +244,7 @@
               <a href="partnerships/the-house-lagos-fashion-week.html" class="btn btn--dark btn--sm">View case study <span class="btn__arrow">→</span></a>
             </div>
             <figure class="proj__media ph ph--sky ph--reel">
-              <span class="reel"><img src="assets/reels/the-house-lagos-fashion-week.webp" alt="The House × Pulse Lagos Fashion Week closing party" loading="lazy" /></span>
+              <a class="reel reel--link" href="https://www.instagram.com/reel/DfPiA_5CC0R/?cnvx=MW5rcGczYTM2Yzc5bQ==" target="_blank" rel="noopener" aria-label="Watch The House × Pulse × Lagos Fashion Week reel on Instagram"><img src="assets/reels/the-house-lagos-fashion-week.webp" alt="The House × Pulse Lagos Fashion Week closing party" loading="lazy" /><span class="reel__play" aria-hidden="true">▶ Watch on Instagram</span></a>
             </figure>
           </article>
         </div>
@@ -307,36 +312,35 @@
       <div class="gallery">
         <figure data-fade>
           <img src="assets/img/pulse-fiesta-ravers-checklist.jpg" alt="Pulse Fiesta Rave SZN Ravers Checklist social post" loading="lazy" />
-          <figcaption>Ravers Checklist, part of the Rave SZN content ecosystem</figcaption>
+          <figcaption>Ravers Checklist, part of the Rave SZN content ecosystem.</figcaption>
         </figure>
         <figure data-fade data-d="1">
           <img src="assets/img/pulse-fiesta-ayra-starr.jpg" alt="Pulse Fiesta Ayra Starr inspired fit social post" loading="lazy" />
-          <figcaption>"Ayra Starr inspired fit", tying the event to artist relevance</figcaption>
+          <figcaption>"Ayra Starr inspired fit", tying the event to artist relevance.</figcaption>
         </figure>
       </div>
       <div class="fsr">
         <article data-fade>
           <h3>The brief</h3>
           <ul>
-            <li>Evolve the fifth edition from a concert into a youth-culture rave</li>
-            <li>Become the December event people had to be at</li>
-            <li>Attendance target of 4,000</li>
+            <li>Evolve the fifth edition from a concert into a youth-culture rave.</li>
+            <li>Become the December event people had to be at.</li>
+            <li>Attendance target of 4,000.</li>
           </ul>
         </article>
         <article data-fade data-d="1">
           <h3>The strategic shift</h3>
           <ul>
-            <li>Audience insight and competitive intelligence shaped the narrative</li>
-            <li>Culturally resonant, relatable content built around Rave SZN</li>
-            <li>Content tied to artists and cultural moments ahead of the event</li>
+            <li>Audience insight and competitor intelligence shaped the narrative.</li>
+            <li>Culturally relevant, relatable content built around Rave SZN.</li>
           </ul>
         </article>
         <article class="fsr__result" data-fade data-d="2">
           <h3>The result</h3>
           <ul>
-            <li><b>7,000+</b> attendees against a 4,000 target</li>
-            <li><b>75K–107K</b> views per post</li>
-            <li><b>107K</b> peak views on a single post</li>
+            <li><b>7,000+</b> attendees against a 4,000 target.</li>
+            <li><b>75K–107K</b> views per post.</li>
+            <li><b>107K</b> peak views on a single post.</li>
           </ul>
         </article>
       </div>
@@ -350,21 +354,29 @@
           <div class="wcard__tags"><span>WAN‑IFRA Award</span><span>Featured in Journalism.co.uk</span></div>
         </article>
         <article class="wcard" data-fade data-d="1">
-          <span class="chip">Pulse Africa · Video strategy</span>
-          <h4>Green screen &amp; POV strategy</h4>
-          <p>I recommended and led POV-style and green-screen video formats across Pulse's Nigeria, Uganda and Côte d'Ivoire markets, producing millions of views and tens of thousands of shares.</p>
-        </article>
-        <article class="wcard" data-fade data-d="2">
           <span class="chip">Real estate · Brand &amp; communications</span>
           <h4>Victoria Crest Homes &amp; Unleashed 4 Takeover 2.0</h4>
           <p>Managed branding and communications for Unleashed 4 Takeover 2.0, Nigeria's biggest real estate conference, with 2,500 attendees in person and 1,500 online. Also led Victoria Crest Homes' website revamp and podcast series launch.</p>
         </article>
+        <article class="wcard wcard--social" data-fade>
+          <span class="chip">Pulse Africa · Social Content Strategy</span>
+          <h4>Culturally relevant content strategy</h4>
+          <p>I introduced culture-led formats across Pulse's Kenya, Nigeria, Uganda and Côte d'Ivoire markets, from POV memes and nostalgic throwbacks to green-screen explainers, generating millions of views and tens of thousands of shares.</p>
+          <ul class="highlights">
+            <li><a href="https://www.tiktok.com/@pulselivekenya/video/7453765698217676038" target="_blank" rel="noopener"><small>Kenya · Nostalgic content</small><span>A TikTok throwback drove 10K+ shares and 4K+ saves.</span><i>Watch ↗</i></a></li>
+            <li><a href="https://www.tiktok.com/@pulseuganda/video/7470595582315203895" target="_blank" rel="noopener"><small>Uganda · POV meme</small><span>A Valentine’s Day POV meme drew 8K+ shares and 2.5K+ saves.</span><i>Watch ↗</i></a></li>
+            <li><a href="https://vm.tiktok.com/ZMkTQ3SGN/" target="_blank" rel="noopener"><small>Nigeria · Green screen</small><span>An explainer reached 1M+ views, 20K+ shares and 7.4K+ comments.</span><i>Watch ↗</i></a></li>
+            <li><a href="https://www.instagram.com/p/DGqpqZ0ITd8/?igsh=andjOXd4a2I2aWx6" target="_blank" rel="noopener"><small>Côte d&#x27;Ivoire · Cultural content</small><span>A culturally rooted post earned 4K+ likes and 200+ shares.</span><i>Watch ↗</i></a></li>
+            <li><a href="https://www.instagram.com/reel/DGTqQrJPHNq/?igsh=d2g0aWFiZ3kwaGk=" target="_blank" rel="noopener"><small>Côte d&#x27;Ivoire · Nostalgic content</small><span>A throwback reel earned 5K+ likes and 1K+ shares.</span><i>Watch ↗</i></a></li>
+            <li><a href="https://www.instagram.com/reel/DGidqP-ykz0/" target="_blank" rel="noopener"><small>Kenya · Hooks &amp; storytelling</small><span>A Pulse WatchIt video blending acting and storytelling became one of its top performers.</span><i>Watch ↗</i></a></li>
+          </ul>
+        </article>
         <article class="wcard wcard--img wcard--wide" data-fade>
-          <figure class="wcard__media"><img src="assets/img/citadel-views-campaign.jpg" alt="Citadel Views POV social media campaign posts" loading="lazy" /></figure>
+          <figure class="wcard__media"><img src="assets/img/citadel-views-campaign.jpg" alt="Citadel Views social media campaign posts" loading="lazy" /></figure>
           <div class="wcard__body">
           <span class="chip">Real estate · Creative direction</span>
           <h4>Citadel Views campaigns</h4>
-          <p>A creative content suite for a real estate brand: POV posts that turned Nigerian vernacular and everyday pain points like NEPA and fuel costs into shareable content, plus a CSR art competition.</p>
+          <p>A creative content suite for a real estate brand: posts that turned Nigerian vernacular and everyday pain points like NEPA and fuel costs into shareable content, plus a CSR art competition.</p>
           </div>
         </article>
       </div>
@@ -380,7 +392,7 @@
       <div class="kind__grid">
         <article class="qcard qcard--big" data-fade>
           <p>"No direction needed, you took up the responsibility. Designs, copy, page management, team collaboration, even client management. The late night calls, anytime of the day you were available, you put your heart into the event. That event would not have been this MAD without you, and that's facts. I'm really grateful to have you on my team. You make working together so easy."</p>
-          <footer><span class="initials" aria-hidden="true">KA</span><span><b>Kanyinsola Aroweyun</b>VP, Brand &amp; Communications, Pulse Africa</span></footer>
+          <footer><span class="initials" aria-hidden="true">KA</span><span><b>Kanyinsola Aroyewun</b>VP, Brand &amp; Communications, Pulse Africa</span></footer>
         </article>
         <div class="kind__col">
           <article class="qcard" data-fade data-d="1">
@@ -395,7 +407,7 @@
     <section class="about section wrap" id="about">
       <figure class="about__img" data-fade>
         <img src="assets/img/oluwatoni-the-juice-booth.jpg" alt="Oluwatoni Victoria at The Juice × Lagos Cocktail Week booth" loading="lazy" />
-        <figcaption>At The Juice × Lagos Cocktail Week</figcaption>
+        <figcaption>At The Juice × Lagos Cocktail Week.</figcaption>
       </figure>
       <div class="about__copy">
         <p class="eyebrow">About</p>
@@ -408,7 +420,7 @@
           <div class="tile" data-fade data-d="2"><strong>13+</strong><small>brands across spirits, real estate, events, health and fashion</small></div>
         </div>
         <ul class="skills" data-fade aria-label="Skills">
-          <li>Strategic planning &amp; execution</li><li>Brand storytelling</li><li>Creative direction</li><li>Content marketing</li><li>Strategic partnerships</li><li>Business development</li><li>Experiential marketing</li><li>Stakeholder management</li><li>Team leadership</li><li>Event &amp; project management</li><li>Email marketing</li><li>Product strategy</li>
+          <li>Strategic planning &amp; execution</li><li>Brand storytelling</li><li>Creative direction</li><li>Content marketing</li><li>Strategic partnerships</li><li>Business development</li><li>Experiential marketing</li><li>Stakeholder management</li><li>Team leadership</li><li>Event &amp; project management</li><li>Email marketing</li><li>Product strategy.</li>
         </ul>
       </div>
     </section>
