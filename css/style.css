@@ -777,3 +777,7 @@ a.svc:hover footer i { background: var(--ink); color: #fff; transform: rotate(-4
 
 /* Brand work page */
 .brand-work-page { padding-top: clamp(16px, 3vw, 32px); }
+
+/* Partnership cards: clip sits directly on the pastel card (no inner panel) */
+.stack .proj__media.ph { background: none; box-shadow: none; padding: 0; }
+.stack .proj__media::after { display: none; }
